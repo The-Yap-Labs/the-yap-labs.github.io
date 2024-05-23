@@ -69,29 +69,31 @@
     }
     @media screen and (max-width: 600px) {
         .behind-text {
-            font-size: 5vw;
+            font-size: 7vw;
         }
     }
-    .linkedin-link {
+    .icon-link {
         position: fixed;
         top: 10px;
-        right: 10px;
-        z-index: 1000; 
-        color: #ffffff;
-        font-size: 18px;
-        font-family: Arial, sans-serif;
-        text-decoration: none;
-        padding: 5px 10px;
-        background-color: black;
-        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        z-index: 1000;
     }
-    .linkedin-link:hover {
-        background-color: purple;
+    .icon-link.linkedin {
+        right: 50px;
+    }
+    .icon-link.github {
+        right: 10px;
     }
 </style>
 </head>
 <body>
-    <a href="https://www.linkedin.com/company/the-yap-labs" class="linkedin-link" target="_blank">?</a>
+    <a href="https://www.linkedin.com/company/the-yap-labs" target="_blank" class="icon-link linkedin">
+        <img src="asset/linkedIn.png" height="30" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/the-yap-labs" target="_blank" class="icon-link github">
+        <img src="asset/github.png" height="30" alt="GitHub">
+    </a>
     <div class="behind-text" id="changingFont">
         <h5>Something is coming to Yap Labs</h5>
     </div>
