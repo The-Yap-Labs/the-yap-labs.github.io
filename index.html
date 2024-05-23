@@ -9,49 +9,42 @@
         font-family: 'Font1';
         src: url('font/1.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font2';
         src: url('font/2.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font3';
         src: url('font/3.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font4';
         src: url('font/4.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font5';
         src: url('font/5.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font6';
         src: url('font/6.ttf') format('truetype');
     }
-
     @font-face {
         font-family: 'Font7';
         src: url('font/7.ttf') format('truetype');
     }
-
-
     @font-face {
         font-family: 'Font8';
         src: url('font/8.ttf') format('truetype');
     }
-
-
     @font-face {
         font-family: 'Font9';
         src: url('font/9.ttf') format('truetype');
     }
-
+    @font-face {
+        font-family: 'Font10';
+        src: url('font/10.ttf') format('truetype');
+    }
     body {
         margin: 0;
         padding: 0;
@@ -62,27 +55,23 @@
         height: 100vh;
         background-color: #f0f0f0;
     }
-
     .image {
         position: absolute;
         pointer-events: none;
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
-
     .behind-text {
         position: fixed;
         z-index: -1;
         font-size: 6vw;
         text-align: center;
     }
-
     @media screen and (max-width: 600px) {
         .behind-text {
-            font-size: 10vw;
+            font-size: 5vw;
         }
     }
-
     .linkedin-link {
         position: fixed;
         top: 10px;
@@ -96,7 +85,6 @@
         background-color: black;
         border-radius: 5px;
     }
-
     .linkedin-link:hover {
         background-color: purple;
     }
@@ -105,13 +93,12 @@
 <body>
     <a href="https://www.linkedin.com/company/the-yap-labs" class="linkedin-link" target="_blank">?</a>
     <div class="behind-text" id="changingFont">
-        <h5>Something is coming to The Yap Labs</h5>
+        <h5>Something is coming to Yap Labs</h5>
     </div>
     <script>
-        const fonts = ['Font1', 'Font2', 'Font3', 'Font4', 'Font5', 'Font6', 'Font7', 'Font8', 'Font9'];
+        const fonts = ['Font1', 'Font2', 'Font3', 'Font4', 'Font5', 'Font6', 'Font7', 'Font8', 'Font9', 'Font10'];
         const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
         document.getElementById('changingFont').style.fontFamily = randomFont;
-
         const numImages = 3;
         const images = [];
         for (let i = 1; i <= numImages; i++) {
@@ -121,13 +108,12 @@
             document.body.appendChild(img);
             images.push({
                 element: img,
-                x: Math.random() * (window.innerWidth - 250),
-                y: Math.random() * (window.innerHeight - 250),
+                x: Math.random() * (window.innerWidth - 150),
+                y: Math.random() * (window.innerHeight - 150),
                 vx: Math.random() * 4 - 2,
                 vy: Math.random() * 4 - 2
             });
         }
-
         function update() {
             images.forEach(imgObj => {
                 const img = imgObj.element;
@@ -145,7 +131,6 @@
                     imgObj.vy *= -1;
                     y = Math.max(0, Math.min(y, window.innerHeight - rect.height));
                 }
-
                 imgObj.x = x;
                 imgObj.y = y;
             });
@@ -155,4 +140,3 @@
     </script>
 </body>
 </html>
-
